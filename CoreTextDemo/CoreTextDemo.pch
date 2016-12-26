@@ -1,0 +1,28 @@
+//
+//  CoreTextDemo.pch
+//  CoreTextDemo
+//
+//  Created by 夏远全 on 16/12/25.
+//  Copyright © 2016年 广州市东德网络科技有限公司. All rights reserved.
+//
+
+#ifndef CoreTextDemo_pch
+#define CoreTextDemo_pch
+
+
+#ifdef DEBUG    
+#define debugLog(...) NSLog(__VA_ARGS__)
+#define debugMethod() NSLog(@"%s",__func__)
+#else
+#define debugLog(...)
+#define debugMethod()
+#endif
+
+#define RGB(R,G,B) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1.0]
+
+#import <Foundation/Foundation.h>
+#import "UIView+Frame.h"
+#import <CoreText/CoreText.h>
+
+
+#endif

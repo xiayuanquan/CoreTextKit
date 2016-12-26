@@ -8,6 +8,8 @@
 
 #import "CTDispalyView.h"
 #import "CoreTextImageData.h"
+#import "CoreTextLinkData.h"
+#import "CoreTextUtils.h"
 
 //导入CoreText系统框架
 #import <CoreText/CoreText.h>
@@ -15,6 +17,7 @@
 @interface CTDispalyView ()<UIGestureRecognizerDelegate>
 @property (strong,nonatomic)UIImageView *tapImgeView;
 @property (strong,nonatomic)UIView *coverView;
+@property (strong,nonatomic)UIWebView *webView;
 @end
 
 @implementation CTDispalyView
@@ -42,6 +45,8 @@
 -(void)userTapGestureDetected:(UITapGestureRecognizer *)recognizer{
     
     CGPoint point = [recognizer locationInView:self];
+    
+    //点击图片
     for (CoreTextImageData *imagData in self.data.imageArray) {
         
         //翻转坐标系，因为ImageData中的坐标是CoreText的坐标系
@@ -50,13 +55,20 @@
         imagePosition.y = self.bounds.size.height - imageRect.origin.y - imageRect.size.height;
         CGRect rect = CGRectMake(imagePosition.x, imagePosition.y, imageRect.size.width, imageRect.size.height);
         
-        //检测点击位置Point是否在rect之内
+        //检测点击图片的位置Point是否在rect之内
         if (CGRectContainsPoint(rect, point)) {
             
             //在这里处理点击后的逻辑
             [self showTapImage:[UIImage imageNamed:imagData.name]];
             break;
         }
+    }
+    
+    //点击链接
+    CoreTextLinkData *linkData = [CoreTextUtils touchLinkInView:self atPoint:point data:self.data];
+    if (linkData) {
+        [self showTapLink:linkData.url];
+        return;
     }
 }
 
@@ -83,6 +95,32 @@
 
 -(void)cancel{
     [_tapImgeView removeFromSuperview];
+    [_coverView removeFromSuperview];
+}
+
+//显示链接网页
+-(void)showTapLink:(NSString *)urlStr{
+    
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    
+    //网页
+    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
+    _webView.center = keyWindow.center;
+    [_webView setScalesPageToFit:YES];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    [_webView loadRequest:request];
+    
+    //蒙版
+    _coverView = [[UIView alloc] initWithFrame:keyWindow.bounds];
+    [_coverView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)]];
+    _coverView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.6];
+    _coverView.userInteractionEnabled = YES;
+    
+    [keyWindow addSubview:_coverView];
+    [keyWindow addSubview:_webView];
+}
+-(void)hide{
+    [_webView removeFromSuperview];
     [_coverView removeFromSuperview];
 }
 

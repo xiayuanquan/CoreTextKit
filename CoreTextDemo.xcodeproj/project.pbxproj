@@ -11,6 +11,8 @@
 		E43AC69A1E10F47100A91594 /* CoreTextImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = E43AC6991E10F47100A91594 /* CoreTextImageData.m */; };
 		E43AC69D1E110EE700A91594 /* image-1.png in Resources */ = {isa = PBXBuildFile; fileRef = E43AC69B1E110EE700A91594 /* image-1.png */; };
 		E43AC69E1E110EE700A91594 /* image-2.png in Resources */ = {isa = PBXBuildFile; fileRef = E43AC69C1E110EE700A91594 /* image-2.png */; };
+		E43AC6A11E1121AA00A91594 /* CoreTextLinkData.m in Sources */ = {isa = PBXBuildFile; fileRef = E43AC6A01E1121AA00A91594 /* CoreTextLinkData.m */; };
+		E43AC6A41E112E4E00A91594 /* CoreTextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E43AC6A31E112E4E00A91594 /* CoreTextUtils.m */; };
 		E49F23C71E0FBC2B004DD901 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E49F23C61E0FBC2B004DD901 /* main.m */; };
 		E49F23CA1E0FBC2B004DD901 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E49F23C91E0FBC2B004DD901 /* AppDelegate.m */; };
 		E49F23CD1E0FBC2B004DD901 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49F23CC1E0FBC2B004DD901 /* ViewController.m */; };
@@ -49,6 +51,10 @@
 		E43AC6991E10F47100A91594 /* CoreTextImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextImageData.m; sourceTree = "<group>"; };
 		E43AC69B1E110EE700A91594 /* image-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-1.png"; sourceTree = "<group>"; };
 		E43AC69C1E110EE700A91594 /* image-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-2.png"; sourceTree = "<group>"; };
+		E43AC69F1E1121AA00A91594 /* CoreTextLinkData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextLinkData.h; sourceTree = "<group>"; };
+		E43AC6A01E1121AA00A91594 /* CoreTextLinkData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextLinkData.m; sourceTree = "<group>"; };
+		E43AC6A21E112E4E00A91594 /* CoreTextUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextUtils.h; sourceTree = "<group>"; };
+		E43AC6A31E112E4E00A91594 /* CoreTextUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextUtils.m; sourceTree = "<group>"; };
 		E49F23C21E0FBC2B004DD901 /* CoreTextDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreTextDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49F23C61E0FBC2B004DD901 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E49F23C81E0FBC2B004DD901 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -139,6 +145,10 @@
 				E49F24091E0FC95B004DD901 /* CoreTextData.m */,
 				E43AC6981E10F47100A91594 /* CoreTextImageData.h */,
 				E43AC6991E10F47100A91594 /* CoreTextImageData.m */,
+				E43AC69F1E1121AA00A91594 /* CoreTextLinkData.h */,
+				E43AC6A01E1121AA00A91594 /* CoreTextLinkData.m */,
+				E43AC6A21E112E4E00A91594 /* CoreTextUtils.h */,
+				E43AC6A31E112E4E00A91594 /* CoreTextUtils.m */,
 				E49F23FB1E0FBCED004DD901 /* CTDispalyView.h */,
 				E49F23FC1E0FBCED004DD901 /* CTDispalyView.m */,
 				E49F23CB1E0FBC2B004DD901 /* ViewController.h */,
@@ -317,12 +327,14 @@
 				E49F23CD1E0FBC2B004DD901 /* ViewController.m in Sources */,
 				E49F240A1E0FC95B004DD901 /* CoreTextData.m in Sources */,
 				E49F23CA1E0FBC2B004DD901 /* AppDelegate.m in Sources */,
+				E43AC6A11E1121AA00A91594 /* CoreTextLinkData.m in Sources */,
 				E49F23FD1E0FBCED004DD901 /* CTDispalyView.m in Sources */,
 				E49F24001E0FC397004DD901 /* UIView+Frame.m in Sources */,
 				E43AC69A1E10F47100A91594 /* CoreTextImageData.m in Sources */,
 				E49F23C71E0FBC2B004DD901 /* main.m in Sources */,
 				E49F24071E0FC92F004DD901 /* CTFrameParser.m in Sources */,
 				E49F24041E0FC907004DD901 /* CTFrameParserConfig.m in Sources */,
+				E43AC6A41E112E4E00A91594 /* CoreTextUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

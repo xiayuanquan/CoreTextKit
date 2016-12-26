@@ -30,6 +30,13 @@
  "type":"txt"
  },
  {
+ "color":"purple",
+ "content":"我是链接，点我吧。",
+ "size":16,
+ "url":"http://www.cnblogs.com/XYQ-208910/p/6222931.html",
+ "type":"link"
+ },
+ {
  "type":"img",
  "width":"375",
  "height":"200",

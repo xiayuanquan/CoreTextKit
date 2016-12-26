@@ -15,5 +15,6 @@
 
 //新增加的成员
 @property (strong,nonatomic)NSArray *imageArray;
+@property (strong,nonatomic)NSArray *linkArray;
 
 @end
